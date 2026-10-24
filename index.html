@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equatorial Coordinate Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scene"></div>
+
+  <header class="title">
+    <h1>EQUATORIAL COORDINATE SYSTEM</h1>
+    <p>Celestial sphere · Earth-centred reference frame</p>
+  </header>
+
+  <section class="panel">
+    <h2>COORDINATES</h2>
+
+    <div class="slider-block">
+      <div class="slider-heading">
+        <label for="raSlider">Right Ascension</label>
+        <output id="raOutput">45.00°</output>
+      </div>
+      <input id="raSlider" type="range"
+             min="0" max="360" step="0.5" value="45">
+    </div>
+
+    <div class="slider-block">
+      <div class="slider-heading">
+        <label for="decSlider">Declination</label>
+        <output id="decOutput">+30.00°</output>
+      </div>
+      <input id="decSlider" type="range"
+             min="-90" max="90" step="0.5" value="30">
+    </div>
+
+    <div class="readout">
+      <div class="cyan">RIGHT ASCENSION</div>
+      <div id="raHours">3.000 h</div>
+      <div id="raDegrees">45.00°</div>
+
+      <div class="gold readout-heading">DECLINATION</div>
+      <div id="decValue">+30.00°</div>
+    </div>
+
+    <h2>DISPLAY</h2>
+
+    <div class="checkboxes">
+      <label><input type="checkbox" id="gridToggle" checked> Coordinate grid</label>
+      <label><input type="checkbox" id="earthToggle" checked> Earth</label>
+      <label><input type="checkbox" id="axesToggle" checked> Coloured coordinate axes</label>
+      <label><input type="checkbox" id="arcsToggle" checked> RA / Dec angle arcs</label>
+    </div>
+  </section>
+
+  <div class="hint">Drag to rotate · Scroll to zoom</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/controls/OrbitControls.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
